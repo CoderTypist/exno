@@ -211,6 +211,7 @@ char* errname(int err)
     }
 }
 
+
 inline void errnout()
 {
     fprintf(stderr, "%s (%d): %s\n", errname(errno), errno, strerror(errno));
@@ -252,6 +253,7 @@ void optHelp()
 {
     printf("outHelp()\n");
 }
+
 
 void optWrite()
 {

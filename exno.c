@@ -161,7 +161,7 @@ inline void errnout()
 }
 
 
-void exitMsg(int status, void (*fnEnd)(), char* fmt, ...)
+void exitMsg(int exitStatus, void (*fnEnd)(), char* fmt, ...)
 {
     // print error message
     va_list vaArg;
@@ -176,7 +176,7 @@ void exitMsg(int status, void (*fnEnd)(), char* fmt, ...)
     if( fnEnd )
         fnEnd();
 
-    exit(status);
+    exit(exitStatus);
 }
 
 
@@ -185,8 +185,7 @@ void exitMsg(int status, void (*fnEnd)(), char* fmt, ...)
 void exno(int exitStatus, void (*fnEnd)(), char* msg)
 {
     fprintf(stderr, "%s\n\t", msg);
-        fprintf(stderr, "errno: %d: %s\n", errno, strerror(errno));
-
+    fprintf(stderr, "errno: %d", errno);
 
     if( fnEnd )
         fnEnd();

@@ -7,7 +7,7 @@
 
 char* errname(int err);
 void errnout();
-void exitMsg(int status, void (*fnEnd)(), char* fmt, ...);
+void exitMsg(int exitStatus, void (*fnEnd)(), char* fmt, ...);
 void exno(int exitStatus, void (*fnEnd)(), char* msg);
 void exnoMsg(int exitStatus, void (*fnEnd)(), char* fmt, ...);
 
